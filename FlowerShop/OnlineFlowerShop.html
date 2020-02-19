@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="Styles/FlowerShopStyle.css" />
+    <title></title>
+    <script src="Scripts/Validation.js"></script>
+</head>
+<body>
+    <h1>FLOWER SHOP ONLINE</h1>
+    <h2></h2>
+    <form id="form1" runat="server">
+    <div class="Row">
+        <div class="Column">
+           <img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\img.png" class="FlowerImage"/>
+        </div>
+        <div class="ColumnAfter">
+            <p class="h3"> Secure Payment Page</p>
+            <div class="RowForm">
+                <div class="ColumnForm">
+                    <p><strong>Select Language</strong></p>
+                    <p>Payment method</p>
+                    <p>Description</p>
+                    <p>Amount</p>
+                </div>
+                <div class="ColumnFormTop">
+                    <p><select id="language" name="Language">
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                    </select></p>
+                    <p><strong>Visa</strong> </p>
+                    <p><strong>Item ordered</strong></p>
+                    <p><strong>£100.00</strong></p>
+                </div>   
+                <div class="ColumnFormImage">
+                    <p><img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\logo.png" class ="VisaImage"/></p>
+                </div>
+           </div>
+            <div class="form">
+              <p class="TitleCard">Card details</p> 
+            <p>You must fill in fields marked with *</p>
+            <div class="RowForm">
+                <div class="ColumnForm">
+                    <p>* Card number<span id="ValidateCardNumberKey" style="display: none;">&nbsp</span></p>
+                    <p>* <a href="https://www.cvvnumber.com/">Security code</a><span id="ValidateSecurityCodeKey" style="display: none;">&nbsp</span></p>
+                    <p>* Expiry date<span id="ValidateCardholderNameKey" style="display: none;">&nbsp</span></p>
+                    <p  class="ParaHeight">* Cardholder's name</p>
+                </div>
+                <div class="ColumnFormAfter">
+                    <p><input type="text" ID="cardNumber" name="cardNumber" class="TextBoxLong" onchange="ValidateCardNumber()" required="" ><span id="ValidateCardNumberValue" style="display: none;">Enter the valid card number</span></p>
+                    <p><input type="text" class="TextBoxSecurity" ID="securityNumber" onchange="ValidateSecurityCode()" required="" TextMode="Password"><span id="ValidateSecurityCodeValue" style="display: none;">Enter the valid security code</span></p>
+                    <p><select id="month" required="">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                     &nbsp 
+                     <select id=year required="">
+                         <option value="2021">2021</option>
+                         <option value="2022">2022</option>
+                         <option value="2023">2023</option>
+                         <option value="2024">2024</option>
+                         <option value="2025">2025</option>
+                         <option value="2026">2026</option>
+                         <option value="2027">2027</option>
+                         <option value="2028">2028</option>
+                         <option value="2029">2029</option>
+                     </select></p>
+                    <p><input type="text" class="TextBoxLong" id ="cardHoldersName" onchange="ValidateCardHolderName()"><span id="ValidateCardholderNameValue" style="display: none;">Enter the valid name</span></p>
+                </div>
+            </div> 
+             <p class="TitleCard">Cardholder details</p>
+             <p>You must fill in fields marked with *</p>
+            <div class="RowForm">
+                <div class="ColumnForm">
+                    <p class="ParaHeight">* Address 1<span id="ValidateAddress1Key" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">&nbsp&nbsp Address 2<span id="ValidateAddress2Key" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">&nbsp&nbsp Address 3<span id="ValidateAddress3Key" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">* Town/City<span id="ValidateTownKey" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">&nbsp&nbsp Region<span id="ValidateRegionKey" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">* Postcode/Zip code<span id="ValidatePincodeKey" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">* Country</p>
+                    <p class="ParaHeight">&nbsp&nbsp Telephone<span id="ValidateTelephoneKey" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">&nbsp&nbsp Fax<span id="ValidateFaxKey" style="display: none;">&nbsp</span></p>
+                    <p class="ParaHeight">* Email address<span id="ValidateEmailKey" style="display: none;">&nbsp</span></p>
+                </div>
+                <div class="ColumnFormAfter">
+                    <p><input type="text" class="TextBoxLong" id="address1" onchange="ValidateAddress1()" required="" ><span id="ValidateAddress1Value" style="display: none;">Enter the valid address</span></p>
+                    <p><input type="text" class="TextBoxLong" id="address2" onchange="ValidateAddress2()" required=""><span id="ValidateAddress2Value" style="display: none;">Enter the valid address</span></p>
+                    <p><input type="text" class="TextBoxLong" id="address3" onchange="ValidateAddress3()"><span id="ValidateAddress3Value" style="display: none;">Enter the valid address</span></p>
+                    <p><input type="text" class="TextBoxLong" id="city" onchange="ValidateTown()" required="" ><span id="ValidateTownValue" style="display: none;">Enter the valid town or city</span></p>
+                    <p><input type="text" class="TextBoxLong" id="region" onchange="ValidateRegion()"><span id="ValidateRegionValue" style="display: none;">Enter the valid region</span></p>
+                    <p><input type="text" class="TextBox" id="pincode" onchange="ValidatePincode()" required="" ><span id="ValidatePincodeValue" style="display: none;">Enter the valid pincode</span></p>
+                    <p><select id="country" class="DropDownList" onchange="ValidateCountry()">
+                        <option value="united Kingdom">United Kingdom</option>
+                        <option value="usa">United States of America</option>
+                        <option value="india">India</option>
+                        <option value="australia">Australia</option>
+                    </select></p>
+                    <p><input type="text" class="TextBox" id="telephone" onchange="ValidateTelephone()"><span id="ValidateTelephoneValue" style="display: none;">Enter the valid phone number</span></p>
+                    <p><input type="text" class="TextBox" id="fax" onchange="ValidateFax()"><span id="ValidateFaxValue" style="display: none;">Enter the valid fax</span></p>
+                    <p><input type="text" class="TextBoxLong" id="email" onchange="ValidateEmail()" required="" ><span id="ValidateEmailValue" style="display: none;">Enter the valid email</span></p>
+                </div>
+            </div>
+                </div>
+             <div class="RowForm">
+                <div class="ColumnForm">
+                    <label><B><a href="OnlineFlowerShop.html"><img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\startAgain.png" class="BottomImage" id="StartAgain" />START AGAIN</B></a></label>
+                    <p><label><B><a href="OnlineFlowerShop.html"><img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\cancel.png" class="BottomImage" id="Cancel" />CANCEL</B></a></label></p>
+                </div>
+                <div class="ColumnFormLeft">
+                    <a href="#" type="button" onclick="submit();" class="pay"><p align="right"><b>MAKE PAYMENT</b>
+                   <img  src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\gg.png"  id="PayImage"  /></p></a>
+                </div>
+            </div> 
+            <hr />
+            <label class="Label">Refunds and Returns </label>
+            <p class="Font">For more information visit our <a style="color:blue" href="http://support.worldpay.com/support/kb/bg/transactionmanagement/tm5100.html">Refunds and Returns Policy.</a></p>
+             <div class="RowForm">
+                <div class="ColumnForm">
+                    <p><img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\pay.png" class="Pay" /></p>
+                </div>
+                <div class="ColumnFormLeft">
+                    <p class="ButtonPosition">For help with your payment visit the <a href="https://www.worldpay.com/en-gb/enterprise-support">WorldPay Help .</a></p>
+                </div>
+            </div> 
+        </div>
+       
+      <div class="ColumnFormHelp">  
+        <p> <img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\gg1.png" class="HelpFirst" id="help" width="30px" Height="30px" /></p>
+        <img src="C:\Users\Admin\Desktop\HTML-CSS-JS-Assignment-master\FlowerShop\Images\gg1.png" class="HelpSecond" id="help" width="30px" Height="30px" />
+          </div>
+    </div>
+    </form>
+    <footer>Thank you for shopping at FlowerShop. Have a nice day</footer>
+</body>
+</html>
